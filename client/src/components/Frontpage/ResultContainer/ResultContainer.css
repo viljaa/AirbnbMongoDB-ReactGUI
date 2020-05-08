@@ -1,0 +1,17 @@
+/* Elements */
+.listing{
+    margin: 10% 7% 7% 7%;
+}
+
+.listingImg{
+    max-width: 30em;
+}
+
+/* Text */
+.listingTitle{
+    margin-bottom: 0.1%;
+}
+
+.listingSubtitle{
+    margin-top: 0;
+}

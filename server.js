@@ -90,7 +90,7 @@ function findMatches(socket,data){
         if (err) console.log(err);
 
         // Create object to store the filtered results
-        let matches = {};
+        let matches = [];
         for(i in results){
             matches[i] = {
                 name: results[i].name,
