@@ -49,7 +49,7 @@ const Manage = () =>{
         if(valid==true){
             socket.emit('addListing', inputs);
             alert("Listing submitted.");
-            window.location.reload(false);
+            window.location.reload();
         };
     };
 
@@ -59,7 +59,7 @@ const Manage = () =>{
         }else{
         socket.emit('updateListing', inputs);
         alert("Update submitted!");
-        window.location.reload(false);
+        window.location.reload();
         }
     };
 
@@ -68,7 +68,7 @@ const Manage = () =>{
             if (window.confirm(`Are you sure you wan't to delete listing ${id}?`)){
                 socket.emit('deleteListing', inputs);
                 alert("Delete request sent to database.");
-                window.location.reload(false);
+                window.location.reload();
             };
         };
     };

@@ -44,6 +44,16 @@ const listing = mongoose.model(
     'listingsAndReviews'
 );
 
+/* Server-side routing */
+
+app.get('/', (req,res)=>{
+    res.sendFile(__dirname + '/client/build/index.html');
+});
+
+app.get('/manage', (req,res)=>{
+    res.sendFile(__dirname + '/client/build/index.html');
+});
+
 /* Socket setup */
 
 const io = socket(server);
