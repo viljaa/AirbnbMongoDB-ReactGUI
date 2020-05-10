@@ -68,15 +68,15 @@ function findMatches(socket,data){
     // Check if fields are defined and if true, append to query     
     if(data.name) {
         let regexp = '.*'+data.name+'.*';
-        query.name = {$regex : regexp};
+        query.name = {$regex : regexp, $options: 'i'};
     };
     if(data.city) {
         let regexp = '.*'+data.city+'.*';
-        query = {'address.market': {$regex : regexp}};
+        query = {'address.market': {$regex : regexp, $options: 'i'}};
     };
     if(data.country) {
         let regexp = '.*'+data.country+'.*';
-        query = {'address.country': {$regex : regexp}};
+        query = {'address.country': {$regex : regexp, $options: 'i'}};
     };
     if(data.nroOfBeds) {
         query.beds = data.nroOfBeds;

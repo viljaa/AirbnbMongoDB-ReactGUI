@@ -32,11 +32,11 @@ const Searchbar = ({socket}) =>{
 
     return(
         <div className='sbContainer'>
-            <input placeholder='Name...' id='inputName' onChange={(event) => setName(event.target.value)} />
-            <input placeholder='City...' id='inputCity' onChange={(event) => setCity(event.target.value)} />
-            <input placeholder='Country...' id='inputCountry' onChange={(event) => setCountry(event.target.value)} />
-            <input placeholder='Nro of beds...' type ='number' id='inputBeds' onChange={(event) => setNroOfBeds(event.target.value)} />
-            <input placeholder='Price cap ($)...' type ='number' id='inputPrice' onChange={(event) => setPrice(event.target.value)} />
+            <input placeholder='Name...' className='searchInput' onChange={(event) => setName(event.target.value)} />
+            <input placeholder='City...' className='searchInput' onChange={(event) => setCity(event.target.value)} />
+            <input placeholder='Country...' className='searchInput' onChange={(event) => setCountry(event.target.value)} />
+            <input placeholder='Nro of beds...' type ='number' className='searchInput' onChange={(event) => setNroOfBeds(event.target.value)} />
+            <input placeholder='Price cap ($)...' type ='number' className='searchInput' onChange={(event) => setPrice(event.target.value)} />
         </div>
     );
 };
