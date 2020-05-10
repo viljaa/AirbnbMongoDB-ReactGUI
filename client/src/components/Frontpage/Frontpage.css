@@ -3,7 +3,7 @@ body{
     background-color: rgb(224, 224, 224);
 }
 
-#rootContainer{
+#rootFpCont{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -26,9 +26,29 @@ body{
     width: 20%;
 }
 
+.fpButton{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1em;
+    background-color: rgb(150, 150, 150);
+    color: white;
+    border-color: rgb(121, 121, 121);
+    border-width: 0.08em;
+    border-radius: 3px;
+    border-style: solid;
+    height:2.4em;
+    width: 12em;
+
+    transition: 0.2s;
+}
+.fpButton:hover{
+    background-color: white;
+    color: black;
+}
+
 /*Text*/
 .pageTitle{
     font-size: 60px;
+    margin: 5% 3% 0 3%;
 }
 
 /*Fonts*/

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './ResultContainer.css';
 
 const ResultContainer = ({socket}) =>{
@@ -20,7 +20,7 @@ const ResultContainer = ({socket}) =>{
           <h4 className='listingSubtitle'>Beds: {resultData.beds} - Price: {resultData.price}$/night</h4>
           <p><b>Summary:</b> {resultData.summary}</p>
           <form action={resultData.url}>
-            <input type='submit' value='Check listing' />
+            <input className='fpButton' type='submit' value='Check listing' />
           </form>
         </div>
       ))}

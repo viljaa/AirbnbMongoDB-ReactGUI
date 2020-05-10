@@ -8,16 +8,16 @@ import Searchbar from './Searchbar/Searchbar';
 import ResultContainer from './ResultContainer/ResultContainer';
 
 /*Socket initialization*/
-const endpoint = 'http://localhost:5000';
+const endpoint = 'https://vj-airbnb-reactgui.herokuapp.com/';
 const socket = io.connect(`${endpoint}`);
 
 const Frontpage = () =>(
-    <div id='rootContainer'>
+    <div id='rootFpCont'>
         <div className='sidebarContainer'></div>
         <div className='fpContainer'>
             <h1 className='pageTitle'>Airbnb Listing DB</h1>
             <Link to={'/manage'}>
-                <button>Manage listings</button>
+                <button className='fpButton'>Manage listings</button>
             </Link>
             <Searchbar socket={socket}/>
             <ResultContainer socket={socket} />

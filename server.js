@@ -57,6 +57,11 @@ io.on('connection', (socket)=>{
         console.log(data);
         findMatches(socket,data);
     });
+
+    socket.on('addListing',(data)=>{
+        addListing(data);
+    });
+        
 });
 
 /* Functions */
@@ -105,5 +110,32 @@ function findMatches(socket,data){
         };
         // Send results to the client
         socket.emit('queryResults', matches);
+    });
+};
+
+function addListing(data){
+    
+    let entry = {
+        name: data.name,
+        address:{
+            market: data.city,
+            country: data.country
+        },
+        listing_url: data.url,
+        images:{
+            picture_url: data.picture_url
+        },
+        price: data.price,
+        beds: data.beds
+    }
+
+    mongoose.connection.collection('listingsAndReviews').insert(entry, (err, result)=>{
+        if(err){
+            console.error(err);
+        }
+        else{
+            console.log(`Inserted: ${result.insertedCount}`);
+            console.log(`Entry saved! ID: ${entry._id}`);
+        };
     });
 };
