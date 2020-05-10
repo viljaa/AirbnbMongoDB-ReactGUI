@@ -8,7 +8,7 @@
     align-items: center;
 }
 .manageContainer{
-    margin-top: 5%;
+    margin-top: 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,6 +26,10 @@
 #formBtnCont{
     display: flex;
     flex-direction: row;
+}
+
+.formInfoCont{
+    margin: 2% 0 3% 0;
 }
 
 /*Form*/
@@ -76,6 +80,10 @@
 }
 
 /*TEXT*/
+
+.formParagraph{
+    margin:2% 6% 0 6%;
+}
 
 /*Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');

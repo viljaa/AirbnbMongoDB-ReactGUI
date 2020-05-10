@@ -2,13 +2,18 @@
 
 /*Text*/
 .sbContainer{
-    margin-top: 10%;
+    margin: 10% 3% 0% 3%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     font-family: 'Titillium Web', sans-serif;
     flex-wrap: wrap;
+    background-color:rgb(224, 224, 224);
+    border-color: rgb(196, 196, 196);
+    border-width: 0.04em;
+    border-style: solid;
+    border-radius: 3px;
 }
 
 .searchInput{
@@ -21,6 +26,7 @@
     height: 2em;
     width: 11.5em;
     font-size: 1.2em;
+    text-align: center;
 }
 .searchInput:hover{
     box-shadow: 0px 0px 32px -12px rgba(0,0,0,0.75);

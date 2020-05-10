@@ -61,6 +61,14 @@ io.on('connection', (socket)=>{
     socket.on('addListing',(data)=>{
         addListing(data);
     });
+
+    socket.on('updateListing', (data)=>{
+        updateListing(data);
+    });
+
+    socket.on('deleteListing', (data)=>{
+        deleteListing(data);
+    });
         
 });
 
@@ -114,8 +122,9 @@ function findMatches(socket,data){
 };
 
 function addListing(data){
-    
+
     let entry = {
+        _id: data.id,
         name: data.name,
         address:{
             market: data.city,
@@ -136,6 +145,66 @@ function addListing(data){
         else{
             console.log(`Inserted: ${result.insertedCount}`);
             console.log(`Entry saved! ID: ${entry._id}`);
+        };
+    });
+};
+
+function updateListing(data){
+    // Create query object
+    let query = {}
+    // Loop through the object to remove empty fields
+    for (let i in data){
+        if(data[i] === null || data[i] === undefined){
+            delete data[i];
+        };
+    };
+    // Create query
+    if(data.name){
+        query = {name: data.name}
+    };
+    if(data.city){
+        query = {"address.market":data.city}
+    };
+    if(data.country){
+        query = {"address.country":data.country}
+    };
+    if(data.url){
+        query = {listing_url:data.url}
+    };
+    if(data.picture_url){
+        query = {"images.picture_url":data.picture_url}
+    };
+    if(data.price){
+        query = {price: data.price}
+    };
+    if(data.beds){
+        query = {beds: data.beds};
+    };
+
+    console.log(query);
+
+    // Find the listing to update and update data
+    listing.findByIdAndUpdate(data.id, query, {new:true},(err,result)=>{
+        if (err){
+            console.log('Error occured while trying to update entry.')
+            console.error(err);
+        }
+        else{
+            console.log(`Entry with id ${data.id} updated successfully!`);
+            console.log(result);
+        };
+    });
+};
+
+function deleteListing(data){
+    let id = data.id;
+
+    listing.findByIdAndDelete(id,(err, result)=>{
+        if (err){
+            console.error(err);
+        }
+        else{
+            console.log(`Entry with ID:${id} deleted successfully.`);
         };
     });
 };
