@@ -8,7 +8,7 @@ import Searchbar from './Searchbar/Searchbar';
 import ResultContainer from './ResultContainer/ResultContainer';
 
 /*Socket initialization*/
-const endpoint = 'https://vj-airbnb-reactgui.herokuapp.com/';
+const endpoint = 'https://vj-airbnb-react-app.herokuapp.com/';
 const socket = io.connect(`${endpoint}`);
 
 const Frontpage = () =>(
