@@ -5,7 +5,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const http = require('http');
+require ('dotenv').config();
 const socket = require('socket.io');
+
+/* Environment variables */
+const dbUri = process.env.DB_URI;
 
 /* App setup */
 const app = express();
@@ -20,8 +24,7 @@ server.listen(port, ()=>{
 });
 
 /* Mongoose setup */
-const uri = 'mongodb+srv://testuser:demopass@cluster0-73nr8.mongodb.net/sample_airbnb';
-mongoose.connect(uri, {useNewUrlParser:true, useUnifiedTopology:true});
+mongoose.connect(dbUri, {useNewUrlParser:true, useUnifiedTopology:true});
 
 // Schema
 const listing = mongoose.model(
